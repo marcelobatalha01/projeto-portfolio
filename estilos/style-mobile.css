@@ -196,9 +196,19 @@ h3 {
    ESTILOS PARA PROJETOS
    ========================================== */
 .projetos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--fundo-principal);
+  padding: 30px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.315);
   width: 100%;
   border-radius: 8px;
   overflow: hidden;
+}
+
+.projeto-imagem {
+  width: 100%;
 }
 
 .projeto-img {
@@ -206,6 +216,20 @@ h3 {
   border-radius: 8px;
   object-fit: cover;
   display: block;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.445);
+}
+
+.projeto-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.projeto-info p {
+  text-align: justify;
+  font-size: 0.95em;
+  line-height: 1.5em;
 }
 
 /* ==========================================
@@ -217,16 +241,27 @@ h3 {
   gap: 20px;
 }
 
+.skills-container .item {
+  background-color: var(--fundo-principal);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
 .skills-container .info {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5px;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
 .skills-container .nome {
   font-weight: bold;
   font-size: 0.9em;
   color: var(--texto);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .skills-container .porcent {
@@ -237,22 +272,50 @@ h3 {
 
 .skills-container .barra {
   width: 100%;
-  height: 8px;
-  background-color: var(--fundo-principal);
-  border-radius: 4px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
   overflow: hidden;
 }
 
 .skills-container .progresso {
   height: 100%;
-  background-color: var(--destaque-inverso);
-  border-radius: 4px;
+  background-color: var(--destaque);
+  border-radius: 5px;
 }
+
+footer {
+  background-color: var(--destaque);
+  color: var(--destaque-inverso);
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
+  }
+
+  footer:hover {
+    color: var(--texto-inverso);
+  }
 
 /* Responsividade para telas maiores (Desktop) */
 @media screen and (min-width: 768px) { 
   .skills-container {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+  }
+
+  .projetos-container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .projeto-imagem {
+    flex: 1;
+    width: 50%;
+  }
+
+  .projeto-info {
+    flex: 1;
+    width: 50%;
   }
 }
