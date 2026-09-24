@@ -130,8 +130,12 @@ h3 {
   margin: 20px 0 10px 0;
 }
 
-/* Configuração correta para vídeos responsivos (16:9) */
-.video-container {
+/* ==========================================
+   CONFIGURAÇÃO DE VÍDEOS RESPONSIVOS (16:9)
+   ========================================== */
+.video-container,
+.habilidades-container,
+.esportes-container {
   position: relative;
   width: 100%;
   aspect-ratio: 16/9;
@@ -140,7 +144,9 @@ h3 {
   border-radius: 8px;
 }
 
-.video-container iframe {
+.video-container iframe,
+.habilidades-container iframe,
+.esportes-container iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -149,32 +155,83 @@ h3 {
   border: 0;
 }
 
-/* Estilo para imagem de projetos */
+/* ==========================================
+   ESTILOS PARA FORMAÇÃO (CURSOS)
+   ========================================== */
+.cursos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.curso {
+  background-color: var(--fundo-principal);
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 5px solid var(--destaque);
+  transition: 0.5s, border-color 0.5s;
+}
+
+.curso:hover {
+  border-left-width: 25px;
+  border-left-color: var(--destaque-inverso);
+  cursor: pointer;
+}
+
+.periodo {
+  font-size: 1.2em;
+  color: #666;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.titulacao {
+  font-size: 1.5em;
+  color: var(--destaque);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* ==========================================
+   ESTILOS PARA PROJETOS
+   ========================================== */
+.projetos-container {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
 .projeto-img {
   width: 100%;
   border-radius: 8px;
   object-fit: cover;
-  margin-bottom: 15px;
+  display: block;
 }
 
+/* ==========================================
+   ESTILOS PARA SKILLS (BARRAS DE PROGRESSO)
+   ========================================== */
 .skills-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
+  gap: 20px;
 }
 
 .skills-container .info {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 5px;
 }
 
 .skills-container .nome {
   font-weight: bold;
+  font-size: 0.9em;
   color: var(--texto);
 }
 
 .skills-container .porcent {
   font-weight: bold;
+  font-size: 0.9em;
   color: var(--destaque);
 }
 
@@ -183,6 +240,7 @@ h3 {
   height: 8px;
   background-color: var(--fundo-principal);
   border-radius: 4px;
+  overflow: hidden;
 }
 
 .skills-container .progresso {
@@ -191,9 +249,10 @@ h3 {
   border-radius: 4px;
 }
 
+/* Responsividade para telas maiores (Desktop) */
 @media screen and (min-width: 768px) { 
   .skills-container {
-  grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
   }
 }
-  
